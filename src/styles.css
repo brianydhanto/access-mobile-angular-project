@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+
+.child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.none-decoration {
+	text-decoration: none;
+}

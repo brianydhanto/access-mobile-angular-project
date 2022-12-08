@@ -1,0 +1,68 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12 pt-3 pb-1">
+	    	<a [routerLink]="['/questions']"><i class="bi bi-house"></i></a> HOME
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 pt-3 pb-3">
+	      <div class="card">
+	        <div class="card-header">
+	          <div class="row">
+	            <div class="col-md-10">
+	            <h6>{{ data ? data.username : '-' }}</h6>
+	            </div>
+	            <div class="col-md-2">
+	            <h6>{{ data ? data.published : '-' }}</h6>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="card-body">
+	          <h5 class="card-title">{{ data ? data.question_title : '-' }}</h5>
+	          <p class="card-text">{{ data ? data.question : '-' }}</p>
+	        </div>
+	      </div>
+	    </div>
+	</div>
+
+	<div class="row" *ngFor="let item of data.answer">
+	    <div class="col-md-12 pt-3 pb-3">
+	      <div class="card">
+	        <div class="card-header">
+	          <div class="row">
+	            <div class="col-md-10">
+	            <h6>{{ item.username }}</h6>
+	            </div>
+	            <div class="col-md-2">
+	            <h6>{{ item.answer_published }}</h6>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="card-body">
+	            <p class="card-text">{{ item.answer_detail }}</p>
+	        </div>
+	      </div>
+	    </div>
+	</div>
+
+	<div class="row">
+	    <div class="col-md-12 pt-3 pb-3">
+	      <div class="card">
+	        <div class="card-body">
+	        	<div class="row">
+	        		<div class="col-md-12">
+			        	<div class="form-group">
+						    <textarea class="form-control" rows="3" placeholder="Add Answer Here!" [(ngModel)]="newAnswer"></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2 pt-3">
+						<button type="button" class="btn btn-success" (click)="addAnswer()" name="newAnswer">SUBMIT</button>
+					</div>
+				</div>
+	        </div>
+	      </div>
+	    </div>
+	</div>
+</div>
